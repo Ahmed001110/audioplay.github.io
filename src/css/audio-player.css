@@ -1,0 +1,135 @@
+body {
+    background-color: #000;
+    font-family: sans-serif;
+}
+
+.audio_player {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #111;
+    width: 80%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.audio_btn{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #555;
+    cursor: pointer;
+}
+.audio_btn:hover{
+    color: #333;
+}
+.audio_btn i{
+    font-size: 25px;
+    transition: .3s;
+}
+.audio_btn:active i{
+    transform: scale(0.8);
+}
+#play_btn{
+    width: 60px;
+}
+.audio_actions .audio_btn{
+    height: auto;
+    padding: 5px;
+}
+.audio_actions .audio_btn i{
+    font-size: 20px;
+}
+.audio_actions{
+    margin-right: 15px;
+}
+#volume_btn{
+    width: 33px;
+}
+
+.audio_controls,
+.audio_actions {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.credits {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #fff;
+    pointer-events: none;
+    font-size: 10px;
+    line-height: 12px;
+}
+.audio_timeline {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer;
+    border-right: 1px solid #555;
+}
+#audio_progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: blue;
+    z-index: -1;
+    pointer-events: none;
+}
+.credits_details{
+    display: flex;
+    align-items: center;
+}
+.credits_middle_line{
+    margin: 0 5px;
+}
+#playerDescription{
+    animation-name: fade;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-direction: alternate;
+}
+@keyframes fade {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .audio_player{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .audio_btn i{
+        font-size: 20px;
+    }
+    #play_btn{
+        width: 45px;
+        margin-left: 5px;
+    }
+    .audio_timeline{
+        margin: 0 10px;
+    }
+    .audio_actions{
+        margin-right: 10px;
+    }
+}
